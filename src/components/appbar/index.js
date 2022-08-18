@@ -1,13 +1,18 @@
 import { useTheme } from '@mui/material/styles';
 import { useMediaQuery } from '@mui/material';
+import AppbarDesktop from './appbarDesktop';
+import AppbarMobile from './appbarMobile';
 
-function Appbar() {
+export default function Appbar() {
   const theme = useTheme();
-  const matchers = useMediaQuery(theme.breakpoints.down('md'));
-
-  console.log('The matchers: ', matchers);
-
-  return <>{matchers ? <h1>Mobile</h1> : <h1>Desktop</h1>}</>;
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
+  return (
+    <>
+      {matches ? (
+        <AppbarMobile matches={matches} />
+      ) : (
+        <AppbarDesktop matches={matches} />
+      )}
+    </>
+  );
 }
-
-export default Appbar;

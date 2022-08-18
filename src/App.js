@@ -13,7 +13,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <Container maxWidth="xl" sx={{ background: '#fff' }}>
         <Appbar />
-        <Button variant="contained">Test</Button>
+        <Button variant="contained">Test Btn</Button>
       </Container>
     </ThemeProvider>
   );
